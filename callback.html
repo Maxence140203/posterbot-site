@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>OAuth Callback - PosterBOT</title></head>
+<body>
+  <h1>OAuth Callback</h1>
+  <p id="msg">Waiting for code…</p>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    if (code) {
+      document.getElementById('msg').innerHTML =
+        'Copy this code and paste it into your script:<br><code style="font-size:1.2em;">' + code + '</code>';
+    } else {
+      document.getElementById('msg').textContent = 'No code parameter found.';
+    }
+  </script>
+</body>
+</html>
